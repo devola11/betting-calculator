@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betting Calculator</title>
+    <link rel="shortcut icon" href="image.png" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>This is a mini betting calculator</h1>
+
+    <script>
+      // betting calculator
+      // Function to calculate bet
+
+      const calculateBet = (stake, odds) => {
+        const totalReturn = stake * odds;
+        const profit = totalReturn - stake;
+
+        return {
+          stake: stake,
+          odds: odds,
+          totalReturn: totalReturn,
+          profit: profit,
+        };
+      };
+
+      // Array of bets
+      const bets = [
+        { stake: 6500, odds: 3.2 },
+        { stake: 10000, odds: 2.5 },
+        { stake: 50000, odds: 1.8 },
+      ];
+
+      // Track best bet (BEFORE Loop)
+
+      let bestProfit = 0;
+      let bestNumber = 0;
+
+      // Loop through and calculate each bet
+      for (let i = 0; i < bets.length; i++) {
+        const bet = bets[i];
+        const result = calculateBet(bet.stake, bet.odds);
+
+        console.log(`\n🎯 BET ${i + 1}:`);
+        console.log("====================================");
+        console.log(`Stake:        ₦${result.stake.toLocaleString()}`);
+        console.log(`Odds:         ${result.odds}`);
+        console.log("-----------------------------------------");
+        console.log(`Total Return: ₦${result.totalReturn.toLocaleString()}`);
+        console.log(`Profit:       ₦${result.profit.toLocaleString()}`);
+        console.log("====================================");
+
+        // Check if this is the bset bet
+
+        if (result.profit > bestProfit) {
+          bestProfit = result.profit;
+          bestNumber = i + 1;
+        }
+      }
+
+      // display best bet(After Loop!)
+
+      console.log("\n BEST BET ANALYSIS");
+      console.log("===================================");
+      console.log(` Best Bet: BET ${bestNumber}`);
+      console.log(` Highest Profit: ₦${bestProfit.toLocaleString()}`);
+      console.log("====================================");
+    </script>
+  </body>
+</html>
