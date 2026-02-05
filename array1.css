@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+
+input {
+  padding: 8px;
+  width: 150px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #d2f1d2;
+}
+.buttons {
+  margin-top: 15px;
+}
+
+#output {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  min-height: 40px;
+}
