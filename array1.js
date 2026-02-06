@@ -45,3 +45,42 @@ function reverseArray() {
   arr.reverse();
   displayArray("Reversed Array");
 }
+
+function sortArray() {
+  if (arr.length === 0) {
+    displayArray("Array is empty");
+    return;
+  }
+  arr.sort((a, b) => a - b);
+  displayArray("Sorted Array (Ascending!)");
+}
+
+function filterEven() {
+  if (arr.length === 0) {
+    displayArray("Array is empty");
+    return;
+  }
+
+  const evens = arr.filter((num) => num % 2 === 0);
+
+  if (evens.length === 0) {
+    output.innerHTML = `<strong>Even Numbers</strong> <br>
+    No even numbers found`;
+    return;
+  }
+
+  output.innerHTML = `<strong>Even Numbers</strong> <br>
+  [${evens.join(", ")}]`;
+}
+
+function calculateSum() {
+  if (arr.length === 0) {
+    displayArray("Array is empty");
+    return;
+  }
+
+  const sum = arr.reduce((acc, cur) => acc + cur, 0);
+
+  output.innerHTML = `<strong>Sum</strong> <br>
+  ${sum}`;
+}
