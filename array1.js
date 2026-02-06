@@ -84,3 +84,5 @@ function calculateSum() {
   output.innerHTML = `<strong>Sum</strong> <br>
   ${sum}`;
 }
+
+document.getElementById(addBtn).addEventListener("click", addNumber);
