@@ -85,4 +85,14 @@ function calculateSum() {
   ${sum}`;
 }
 
-document.getElementById(addBtn).addEventListener("click", addNumber);
+document.getElementById("addBtn").addEventListener("click", addNumber);
+document.getElementById("popBtn").addEventListener("click", removeLast);
+document.getElementById("shiftBtn").addEventListener("click", removeFirst);
+document.getElementById("sortBtn").addEventListener("click", sortArray);
+document.getElementById("reverseBtn").addEventListener("click", reverseArray);
+document.getElementById("filterBtn").addEventListener("click", filterEven);
+document.getElementById("sumBtn").addEventListener("click", calculateSum);
+
+numberInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") addNumber();
+});
